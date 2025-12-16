@@ -1,0 +1,75 @@
+---
+const { title, description, label, detail, link } = Astro.props;
+---
+
+<article class="project-card">
+	<div class="card-heading">
+		<p class="label">{label}</p>
+		<h3>{title}</h3>
+	</div>
+	<p class="description">{description}</p>
+	<p class="detail">{detail}</p>
+	<a class="link" href={link} aria-label={`View details for ${title}`}>View case study →</a>
+</article>
+
+<style>
+	.project-card {
+		border: 1px solid #e5e7eb;
+		border-radius: 16px;
+		padding: 1.75rem;
+		background: #ffffff;
+		box-shadow: 0 12px 40px rgba(15, 23, 42, 0.05);
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		transition: transform 0.3s ease, border-color 0.3s ease;
+	}
+
+	.card-heading {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.label {
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		color: #9ca3af;
+		margin: 0;
+	}
+
+	h3 {
+		margin: 0;
+		font-size: 1.5rem;
+		color: #111827;
+	}
+
+	.description {
+		color: #4b5563;
+		margin: 0;
+		line-height: 1.6;
+		font-size: 1rem;
+	}
+
+	.detail {
+		margin: 0;
+		font-size: 0.95rem;
+		color: #1f2937;
+		font-weight: 500;
+	}
+
+	.link {
+		margin-top: auto;
+		font-size: 0.95rem;
+		text-decoration: none;
+		color: #0f172a;
+		font-weight: 600;
+	}
+
+	.project-card:hover {
+		transform: translateY(-4px);
+		border-color: #cbd5f5;
+	}
+</style>
+

@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import AboutSection from '../components/AboutSection.astro';
+import Footer from '../components/Footer.astro';
+
+const projects = [
+	{
+		title: 'Momentum Mobile',
+		label: 'Fintech App',
+		description: 'Redesigned a savings assistant that helps users slow down and rebuild financial confidence.',
+		detail: 'Led research, rapid prototyping, and polished handoff for a multi-platform launch.',
+		link: '#'
+	},
+	{
+		title: 'Atlas Studio',
+		label: 'Collaboration Tool',
+		description: 'Crafted a modular system for creative teams to align around narratives, not just pixels.',
+		detail: 'Scoped the design system and defined cross-functional principles for motion and voice.',
+		link: '#'
+	},
+	{
+		title: 'Pulse Console',
+		label: 'Enterprise Dashboard',
+		description: 'Simplified a sprawling health analytics platform into calm, digestible storylines.',
+		detail: 'Partnered with engineers to introduce adaptive layouts and a visual hierarchy audit.',
+		link: '#'
+	}
+];
+---
+
+<Layout>
+	<main class="page">
+		<HeroSection
+			name="Frank Black"
+			tagline="Product designer building calm, confident experiences."
+			description="I translate strategy into tactile journeys, growing clarity through research, prototyping, and thoughtful collaboration."
+			ctaText="See my work"
+			ctaHref="#projects"
+		/>
+
+		<section class="projects" id="projects">
+			<div class="section-heading">
+				<p class="eyebrow">Selected work</p>
+				<h2>Recent case studies</h2>
+			</div>
+			<div class="projects-grid">
+				{projects.map((project) => (
+					<ProjectCard
+						title={project.title}
+						label={project.label}
+						description={project.description}
+						detail={project.detail}
+						link={project.link}
+					/>
+				))}
+			</div>
+		</section>
+
+		<AboutSection />
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	:global(body) {
+		font-family: 'Inter', system-ui, sans-serif;
+		background: #f5f5f5;
+		color: #0f172a;
+		margin: 0;
+	}
+
+	.page {
+		min-height: 100vh;
+		background: #fff;
+		box-shadow: inset 0 1px 0 #e5e7eb;
+	}
+
+	.projects {
+		padding: 0 1.25rem 3rem;
+		max-width: 960px;
+		margin: 0 auto;
+	}
+
+	.section-heading {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin-bottom: 2rem;
+	}
+
+	.section-heading h2 {
+		margin: 0;
+		font-size: clamp(2rem, 3vw, 2.5rem);
+	}
+
+	.eyebrow {
+		all: unset;
+		text-transform: uppercase;
+		letter-spacing: 0.35em;
+		font-size: 0.7rem;
+		color: #9ca3af;
+	}
+
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 1.25rem;
+	}
+
+	@media (max-width: 640px) {
+		.section-heading {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+</style>

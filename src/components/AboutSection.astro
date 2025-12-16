@@ -1,0 +1,66 @@
+<section class="about">
+	<div class="about-copy">
+		<p class="eyebrow">About</p>
+		<h2>Designing experiences that feel effortless.</h2>
+		<p>
+			I partner with product teams to translate complex challenges into intuitive experiences. From research
+			through delivery, I care about clarity, craft, and measurable outcomes that align with business goals.
+		</p>
+		<p>
+			My focus has been on collaborative web and native products, shaping systems that scale while keeping the
+			detail work grounded in empathy with users. I enjoy mentoring fellow designers, prototyping in code, and
+			keeping interfaces calm even when the underlying logic is sprawling.
+		</p>
+	</div>
+	<div class="about-panel">
+		<p>Currently working with a remote fintech team to refresh their onboarding flow.</p>
+	</div>
+</section>
+
+<style>
+	.about {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 2rem;
+		padding: 4rem 1.25rem;
+		max-width: 960px;
+		margin: 0 auto;
+	}
+
+	.about-copy h2 {
+		font-size: clamp(2rem, 3vw, 2.6rem);
+		margin-bottom: 1rem;
+		margin-top: 0;
+	}
+
+	.about-copy p {
+		margin-top: 0.75rem;
+		color: #475569;
+		line-height: 1.6;
+	}
+
+	.eyebrow {
+		text-transform: uppercase;
+		letter-spacing: 0.4em;
+		font-size: 0.75rem;
+		color: #9ca3af;
+		margin-bottom: 0.5rem;
+	}
+
+	.about-panel {
+		border: 1px solid #d6d6d6;
+		border-radius: 14px;
+		background: #f8fafc;
+		padding: 1.5rem;
+		font-weight: 500;
+		color: #1e293b;
+		line-height: 1.5;
+	}
+
+	@media (max-width: 500px) {
+		.about-panel {
+			text-align: left;
+		}
+	}
+</style>
+

@@ -1,0 +1,74 @@
+---
+const { name, tagline, description, ctaText, ctaHref } = Astro.props;
+---
+
+<section class="hero">
+	<p class="eyebrow">Product Designer</p>
+	<h1>{name}</h1>
+	<p class="tagline">{tagline}</p>
+	<p class="description">{description}</p>
+	<a class="cta" href={ctaHref}>{ctaText}</a>
+</section>
+
+<style>
+	.hero {
+		padding: 5rem 1.5rem 4rem;
+		max-width: 960px;
+		margin: 0 auto;
+		text-align: left;
+	}
+
+	.eyebrow {
+		letter-spacing: 0.3em;
+		text-transform: uppercase;
+		font-size: 0.75rem;
+		color: #6b7280;
+		margin-bottom: 1rem;
+	}
+
+	h1 {
+		font-size: clamp(2.8rem, 4vw, 4rem);
+		margin: 0;
+		font-weight: 600;
+	}
+
+	.tagline {
+		font-size: 1.5rem;
+		margin: 1.25rem 0;
+		color: #374151;
+		max-width: 32rem;
+		line-height: 1.4;
+	}
+
+	.description {
+		color: #4b5563;
+		max-width: 40rem;
+		line-height: 1.6;
+		margin-bottom: 2rem;
+	}
+
+	.cta {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.95rem 2.25rem;
+		border-radius: 999px;
+		border: 1px solid #111827;
+		color: #111827;
+		text-decoration: none;
+		font-weight: 600;
+		transition: background 0.2s ease, color 0.2s ease;
+	}
+
+	.cta:hover {
+		background: #111827;
+		color: #f9fafb;
+	}
+
+	@media (max-width: 640px) {
+		.hero {
+			padding-top: 3rem;
+		}
+	}
+</style>
+
